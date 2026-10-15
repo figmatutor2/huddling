@@ -1,5 +1,7 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css");
 @import "tailwindcss";
 @source not "../../.claude";
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,12 +10,185 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  /* ===== 글꼴 ===== */
+  --font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+  /* ===== 색상: 팔레트(원색) ===== */
+  --color-blue-50: #dceafe;
+  --color-blue-300: #74aafb;
+  --color-blue-500: #297eff;
+  --color-blue-800: #1f3dbc;
+  --color-blue-900: #00378a;
+  --color-indigo-500: #536dfe;
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-150: #e7e7e8;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-500: #a0a2a3;
+  --color-neutral-600: #66707a;
+  --color-neutral-700: #6b7280;
+  --color-neutral-800: #5e5e5e;
+  --color-neutral-900: #1f2937;
+  --color-neutral-950: #131313;
+  --color-neutral-1000: #000000;
+  --color-red-600: #d90000;
+  --color-white-20: #ffffff33;
+
+  /* ===== 색상: 의미(semantic) ===== */
+  --color-action-primary: #536dfe;
+  --color-action-secondary: #297eff;
+  --color-action-on-primary: #ffffff;
+  --color-action-hover-overlay: #1f3dbcb2;
+  --color-background-default: #ffffff;
+  --color-background-subtle: #f9fafb;
+  --color-border-accent: #1f3dbc;
+  --color-border-default: #e5e7eb;
+  --color-border-on-dark: #ffffff33;
+  --color-border-strong: #66707a;
+  --color-border-subtle: #e7e7e8;
+  --color-feedback-error: #d90000;
+  --color-info-default: #297eff;
+  --color-info-soft: #74aafb;
+  --color-info-strong: #00378a;
+  --color-info-subtle: #dceafe;
+  --color-surface-default: #ffffff;
+  --color-surface-inverse: #1f2937;
+  --color-surface-subtle: #f3f4f6;
+  --color-text-primary: #131313;
+  --color-text-secondary: #6b7280;
+  --color-text-tertiary: #66707a;
+  --color-text-strong: #000000;
+  --color-text-inverse: #ffffff;
+  --color-text-disabled: #a0a2a3;
+
+  /* ===== 간격(spacing) — Figma 값 px 그대로 ===== */
+  --spacing-0: 0px;
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-5: 5px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-44: 44px;
+  --spacing-48: 48px;
+  --spacing-52: 52px;
+  --spacing-60: 60px;
+  --spacing-80: 80px;
+  --spacing-120: 120px;
+  --spacing-control-x: 12px;
+  --spacing-control-y: 8px;
+  --spacing-inline-sm: 4px;
+  --spacing-inline-md: 8px;
+  --spacing-page-horizontal: 20px;
+  --spacing-section: 32px;
+  --spacing-stack-sm: 12px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-lg: 24px;
+
+  /* ===== 모서리 둥글기(radius) — px 그대로 ===== */
+  --radius-0: 0px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-20: 20px;
+  --radius-full: 999px;
+  --radius-button: 6px;
+  --radius-card: 20px;
+  --radius-control: 8px;
+  --radius-media: 12px;
+  --radius-pill: 999px;
+
+  /* ===== 글자 크기(font-size) — px 그대로 ===== */
+  --text-12: 12px;
+  --text-14: 14px;
+  --text-15: 15px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-25: 25px;
+  --text-26: 26px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* ===== 타이포그래피 묶음 클래스 (Figma 텍스트 스타일) ===== */
+@layer components {
+  .text-display-lg {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  .text-title-lg {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  .text-heading-lg {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  .text-heading-md {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  .text-label-lg {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  .text-label-md {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  .text-body-lg {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  .text-body-compact {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  .text-body-md {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  .text-caption-md {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
 }
