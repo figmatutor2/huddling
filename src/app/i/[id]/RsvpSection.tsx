@@ -8,7 +8,8 @@ import { RSVPCard } from "@/components/RSVPCard";
 // 나머지(커버·본문·정보)는 서버에서 그린 뒤, 이 폼만 브라우저에서 움직인다.
 export function RsvpSection() {
   const [name, setName] = useState("");
-  const [attending, setAttending] = useState<boolean | null>(null);
+  // 라디오는 기본값으로 "참석"이 선택된 상태로 시작한다.
+  const [attending, setAttending] = useState<boolean | null>(true);
   const [companions, setCompanions] = useState(0);
   // 제출했으면 true → 같은 자리에서 "완료" 화면으로 바뀐다.
   const [submitted, setSubmitted] = useState(false);

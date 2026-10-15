@@ -24,7 +24,7 @@ export const mockInvitation: Invitation = {
   id: "demo-invitation",
   title: "지우 · 현우 결혼합니다",
   datetime: "2026년 11월 21일 토요일 낮 12시",
-  location: "서울 강남구 테헤란로 123 그랜드홀 5층",
+  location: "서울 강남구 테헤란로 123 그랜드홀",
   body:
     "저희 두 사람이 평생을 함께하기로 했습니다.\n" +
     "바쁘시더라도 오셔서 축복해 주시면 큰 기쁨이 되겠습니다.",
