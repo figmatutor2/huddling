@@ -33,10 +33,13 @@ export default function CreatePage() {
     location.trim() !== "" &&
     body.trim() !== "";
 
-  // 발행하기: 빈 값이면 막고, 추측하기 어려운 고유 ID를 만들어 완료 화면으로 전환.
+  // 발행하기: 빈 값이면 막고 완료 화면으로 전환.
+  // 지금은 저장(Supabase) 전이라 데모용 고정 ID "demo" 를 쓴다.
+  // → 복사 링크가 /i/demo, /i/demo/responses 가 되어 실제로 열린다.
+  // (Supabase 연동 시 crypto.randomUUID() 같은 추측 어려운 ID 로 바꾼다.)
   function handlePublish() {
     if (!canPublish) return;
-    setPublishedId(crypto.randomUUID());
+    setPublishedId("demo");
   }
 
   // 발행이 끝났으면 완료(링크 공유) 화면을 보여준다.

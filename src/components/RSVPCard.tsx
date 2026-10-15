@@ -93,14 +93,16 @@ export function RSVPCard({
 
         <div className="flex w-full flex-col gap-8">
           <Label label="참석 여부" required />
-          <div className="flex w-full items-center justify-between">
+          <div className="flex w-full items-center">
             <RadioOption
+              className="flex-1"
               label="참석"
               name="rsvp-attending"
               checked={attending === true}
               onChange={() => onAttendingChange?.(true)}
             />
             <RadioOption
+              className="flex-1"
               label="불참"
               name="rsvp-attending"
               checked={attending === false}
