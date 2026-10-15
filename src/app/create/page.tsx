@@ -48,10 +48,6 @@ export default function CreatePage() {
     const inviteUrl = `${origin}/i/${publishedId}`;
     const responsesUrl = `${origin}/i/${publishedId}/responses`;
 
-    function copy(text: string) {
-      navigator.clipboard?.writeText(text);
-    }
-
     return (
       <div className="mx-auto flex h-dvh w-full max-w-[375px] flex-col bg-surface-default">
         {/* 상단 바 (고정) */}
@@ -73,7 +69,6 @@ export default function CreatePage() {
             value={inviteUrl}
             title="초대장 링크"
             description="게스트에게 공유하는 링크예요."
-            onCopy={() => copy(inviteUrl)}
           />
 
           {/* 응답 현황 링크 (호스트용) */}
@@ -81,7 +76,6 @@ export default function CreatePage() {
             value={responsesUrl}
             title="응답 현황 링크"
             description="호스트용이에요. 이 링크를 아는 사람은 응답 목록을 볼 수 있어요."
-            onCopy={() => copy(responsesUrl)}
           />
 
           {/* 내 초대장 보기: 게스트용 초대장 화면으로 이동 */}
